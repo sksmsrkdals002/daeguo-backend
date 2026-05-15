@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"User\"\\); Set-Location \"C:\\\\Users\\\\82102\\\\Downloads\\\\daeguo-backend-main\"; railway logs --deployment 27dcaa22-5296-472f-90d8-7852f54c7f40 2>&1 | Select-Object -Last 30)"
+    ]
+  }
+}
