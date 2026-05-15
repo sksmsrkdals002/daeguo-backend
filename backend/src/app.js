@@ -50,8 +50,10 @@ app.use('/api/planner', plannerRoutes);
 app.use('/api/pomodoro', pomodoroRoutes);
 app.use('/api/stats', statsRoutes);
 
-app.use((req, res) => {
-  res.status(404).json({ message: '요청한 경로를 찾을 수 없습니다.' });
+const frontendDist = path.join(__dirname, '../../frontend/dist');
+app.use(express.static(frontendDist));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendDist, 'index.html'));
 });
 
 app.use((err, req, res, next) => {

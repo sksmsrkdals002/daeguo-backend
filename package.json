@@ -1,9 +1,10 @@
 {
-  "name": "daeguo-backend",
+  "name": "daeguo",
   "version": "1.0.0",
   "scripts": {
+    "build": "cd frontend && npm install && npm run build",
     "start": "node backend/server.js",
-    "postinstall": "cd backend && npm install"
+    "postinstall": "cd backend && npm install && cd ../frontend && npm install && npm run build"
   },
   "engines": {
     "node": ">=18"

@@ -21,7 +21,7 @@ const PomodoroPage = () => {
   const intervalRef = useRef(null);
   const startedAt = useRef(null);
 
-  const { onlineCount } = useWebSocket((import.meta.env.VITE_WS_URL || `ws://${window.location.host}`) + '/ws');
+  const { onlineCount } = useWebSocket(`${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${window.location.host}/ws`);
 
   const totalSeconds = useCustom
     ? (Number(customMinutes) || 25) * 60
